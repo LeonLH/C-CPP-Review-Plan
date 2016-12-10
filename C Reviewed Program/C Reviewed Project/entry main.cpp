@@ -16,6 +16,6 @@ int main()
 //	TestShift();
 //	TestGCD();
 
-	TestBubbleSort();
+//	TestBubbleSort();
 	return 0;
 }
