@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C Reviewed Project", "C Reviewed Project\C Reviewed Project.vcxproj", "{4D2B9254-9036-44FF-AB77-2C65B8927912}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys", "StudInfoManaSys\StudInfoManaSys.vcxproj", "{01198374-D29E-4E9E-9BAF-EC260C085084}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_0.1", "StudInfoManaSys_0.1\StudInfoManaSys_0.1.vcxproj", "{01198374-D29E-4E9E-9BAF-EC260C085084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
