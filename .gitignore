@@ -9,3 +9,5 @@
 *.log 
 *.suo
 
+ *.exe *.ilk *.pdb
+ 
