@@ -1,3 +1,6 @@
-# hello-world
-just a little project
-I'm Chinese ,I hope learn coding in here.Hope we can be good friends.
+# C/C++ Review Plan
+C Review Program include versions of Student Infomation Management.
+C++ Review Promgram include some types of DataStruction.
+
+
+
