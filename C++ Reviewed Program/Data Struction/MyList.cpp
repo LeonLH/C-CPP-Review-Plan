@@ -6,7 +6,7 @@ using namespace std;
 
 CMyList::CMyList(void)
 {
-	list l1;
+//	list l1;
 
 }
 
