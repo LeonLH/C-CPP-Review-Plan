@@ -8,6 +8,7 @@
 *.tlog 
 *.log 
 *.suo
+*.exe
+*.ilk
+*.pdb
 
- *.exe *.ilk *.pdb
- 
