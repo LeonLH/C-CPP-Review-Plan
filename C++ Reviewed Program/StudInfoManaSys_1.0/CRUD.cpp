@@ -168,6 +168,7 @@ void FindbyNumb()
 	{
 		cout << "Please Input the Numb for Finding:"<< endl;
 		int n ;
+		fflush(stdin);
 		cin >> n;
 		if(!IsExist(n))
 		{
@@ -202,8 +203,8 @@ void FindbyName()
 	{
 		cout << "Please Input the NAME for Finding:"<< endl;
 		char s[20] ;
+		fflush(stdin);
 		cin >> s;
-
 		POSITION pos = g_list.GetHeadPosition();
 		int i = 0;
 		while(pos)
@@ -234,8 +235,8 @@ void FindbyMath()
 	{
 		cout << "Please Input the Range of Math scores for Finding:[Seperate with ' ']"<< endl;
 		float fMin,fMax;
+		fflush(stdin);
 		cin >> fMin >>fMax ;
-
 		POSITION pos = g_list.GetHeadPosition();
 		int i = 0;
 		while(pos)
