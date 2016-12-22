@@ -13,6 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CEEFCD13-A89B-4D15-AAA2-3C887632971E}</ProjectGuid>
     <RootNamespace>StudInfoManaSysForTestingDataStru</RootNamespace>
+    <ProjectName>StudInfoManaSys_1.0</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -20,6 +21,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -65,11 +67,10 @@
     <ClCompile Include="CRUD.cpp" />
     <ClCompile Include="Enter.cpp" />
     <ClCompile Include="File.cpp" />
-    <ClCompile Include="List.cpp" />
+    <ClCompile Include="ReadMe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HEAD.h" />
-    <ClInclude Include="List.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

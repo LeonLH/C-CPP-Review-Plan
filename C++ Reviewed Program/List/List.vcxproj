@@ -11,12 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ReadMe.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyList.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5CC4A7DD-508F-4DE0-A562-6B87C4C20E96}</ProjectGuid>
-    <RootNamespace>CReviewedProgram</RootNamespace>
-    <ProjectName>Data Struction</ProjectName>
+    <ProjectGuid>{087BB511-5A84-44AF-A29A-A0FA95682006}</ProjectGuid>
+    <RootNamespace>List</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

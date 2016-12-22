@@ -1,79 +1,103 @@
 #include "MyList.h"
-#include<list>
-using namespace std;
-
 
 
 CMyList::CMyList(void)
 {
-//	list l1;
-
+	m_pHead = nullptr;
+	m_pTail = nullptr;
+	m_nCount = 0;
 }
-
 
 CMyList::~CMyList(void)
 {
-}
-bool CMyList::IsEmpty(void)
-{
-	return false;
+
 }
 //增
-void AddHead(DATA data)
+void CMyList::AddHead(DATA data)
 {
+	if(!m_pHead)
+	{
+		SNode *pNew = new SNode;
+		m_pHead = pNew;
+		m_pTail = pNew;
+	}
+	SNode *pNew = new SNode;
+	pNew -> pNext = m_pHead;
+	pNew -> data = data;
+	m_pHead = pNew;
+}
+/*
+template <typename DATA>
+bool CMyList<DATA>::IsEmpty(void)
+{
+	if(!m_pHead )
+		return true;
+	return false;
+}
+template <typename DATA>
+void CMyList<DATA>::AddTail(DATA data)
+{
+	if(!m_pTail)
+	{
+		SNode<DATA> *pNew = new SNode<DATA>;
+		m_pHead = pNew;
+		m_pTail = pNew;
+	}
+	SNode<DATA> *pNew = new SNode<DATA>;
+	m_pTail -> pNext = pNew;
+	pNew -> data = data;
+	m_pTail = pNew;
+}
+
+template <typename DATA>
+void CMyList<DATA>::InsertAfter(POSITION pos)
+{
+	POSITION p = m_pHead;
+	while(p)
 
 }
 
-
-void CMyList::AddTail(DATA data)
-{
-}
-
-
-void CMyList::InsertAfter(POSITION pos)
-{
-
-}
-
-
-void CMyList::InsertBefore(POSITION pos)
+template <typename DATA>
+void CMyList<DATA>::InsertBefore(POSITION pos)
 {
 }
 
 //删
-void CMyList::RemoveAt(POSITION pos)
+template <typename DATA>
+void CMyList<DATA>::RemoveAt(POSITION pos)
 {
 }
 
-
-void CMyList::RemoveHead(void)
+template <typename DATA>
+void CMyList<DATA>::RemoveHead(void)
 {
 }
 
-
-void CMyList::RemoveTail(void)
+template <typename DATA>
+void CMyList<DATA>::RemoveTail(void)
 {
 }
 
-
-void CMyList::RemoveAll(void)
+template <typename DATA>
+void CMyList<DATA>::RemoveAll(void)
 {
 }
 
 //改
-void CMyList::SetAt(POSITION pos, DATA data)
+template <typename DATA>
+void CMyList<DATA>::SetAt(POSITION pos, DATA data)
 {
 }
 //查
-
-POSITION CMyList::Find(DATA data, POSITION StartAfter)
+template <typename DATA>
+POSITION CMyList<DATA>::Find(DATA data, POSITION StartAfter)
 {
 	return POSITION();
 }
 
 
-
-int& CMyList::FindIndex(DATA data, POSITION StratAfter)
+template <typename DATA>
+int& CMyList<DATA>::FindIndex(DATA data, POSITION StratAfter)
 {
 	int i = 0;
 	int *p = &i;
@@ -81,30 +105,30 @@ int& CMyList::FindIndex(DATA data, POSITION StratAfter)
 }
 //位置
 
-
-DATA& CMyList::GetAt(POSITION pos)
+template <typename DATA>
+DATA& CMyList<DATA>::GetAt(POSITION pos)
+{
+	return DATA();
+}
+template <typename DATA>
+const DATA& CMyList<DATA>::GetAt(POSITION pos) const
 {
 	return DATA();
 }
 
-const DATA& CMyList::GetAt(POSITION pos) const
-{
-	return DATA();
-}
 
 
-
-
-DATA& CMyList::GetHead(void)
-{
-	return DATA();
-	//TODO: insert return statement here
-}
-
-const DATA& CMyList::GetHead(void) const
+template <typename DATA>
+DATA& CMyList<DATA>::GetHead(void)
 {
 	return DATA();
 	//TODO: insert return statement here
 }
-
+template <typename DATA>
+const DATA& CMyList<DATA>::GetHead(void) const
+{
+	return DATA();
+	//TODO: insert return statement here
+}
+*/
 

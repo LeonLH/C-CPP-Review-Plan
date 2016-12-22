@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Data Struction", "Data Struction\Data Struction.vcxproj", "{5CC4A7DD-508F-4DE0-A562-6B87C4C20E96}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSysForTestingDataStru", "StudInfoManaSysForTestingDataStru\StudInfoManaSysForTestingDataStru.vcxproj", "{CEEFCD13-A89B-4D15-AAA2-3C887632971E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_1.0", "StudInfoManaSys_1.0\StudInfoManaSys_1.0.vcxproj", "{CEEFCD13-A89B-4D15-AAA2-3C887632971E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "List", "List\List.vcxproj", "{087BB511-5A84-44AF-A29A-A0FA95682006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{CEEFCD13-A89B-4D15-AAA2-3C887632971E}.Debug|Win32.Build.0 = Debug|Win32
 		{CEEFCD13-A89B-4D15-AAA2-3C887632971E}.Release|Win32.ActiveCfg = Release|Win32
 		{CEEFCD13-A89B-4D15-AAA2-3C887632971E}.Release|Win32.Build.0 = Release|Win32
+		{087BB511-5A84-44AF-A29A-A0FA95682006}.Debug|Win32.ActiveCfg = Debug|Win32
+		{087BB511-5A84-44AF-A29A-A0FA95682006}.Debug|Win32.Build.0 = Debug|Win32
+		{087BB511-5A84-44AF-A29A-A0FA95682006}.Release|Win32.ActiveCfg = Release|Win32
+		{087BB511-5A84-44AF-A29A-A0FA95682006}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

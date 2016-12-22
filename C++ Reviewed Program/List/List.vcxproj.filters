@@ -15,24 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Enter.cpp">
+    <ClCompile Include="MyList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="File.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CRUD.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="List.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HEAD.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="List.h">
+    <ClInclude Include="MyList.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
