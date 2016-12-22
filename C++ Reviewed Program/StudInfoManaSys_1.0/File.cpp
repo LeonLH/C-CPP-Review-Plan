@@ -31,4 +31,5 @@ void Save()
 
 	}
 	fclose(fp);
+	g_list.RemoveAll();
 }	

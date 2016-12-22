@@ -4,12 +4,18 @@
 struct DATA
 {
 	int i;
-	bool DATA::operator==(const DATA data1)const;
+
+	bool operator == (DATA &data) const
+	{
+		return (i == data.i);
+	}
+	bool operator != (DATA &data) const
+	{
+		return (i != data.i);
+	}
+
 };
-bool DATA::operator==(const DATA data1)const 
-{
-	return true;
-}
+
 struct SNode
 {//结构体成员的变量的初始化是在实例化（new）之后马上对其内部所有的成员变量赋值，结构体的定义
 	DATA data;
@@ -41,8 +47,13 @@ public:
 
 	POSITION Find(DATA data, POSITION StartAfter);
 	int& FindIndex(DATA data, POSITION StratAfter);
-/*//	DATA& GetAt(POSITION pos);
-//	const DATA& CMyList::GetAt(POSITION pos) const;
+	DATA& GetAt(POSITION pos);
+	DATA& GetNext(POSITION pos);	//可以用于遍历，返回的是pos处的DATA，并且把pos往下移一位
+
+	POSITION GetHeadPosition();
+
+
+/*	const DATA& CMyList::GetAt(POSITION pos) const;
 //	DATA& GetHead(void);
 //	const DATA& CMyList::GetHead(void) const;
 */
@@ -78,6 +89,7 @@ void CMyList::AddHead(DATA data)
 	pNew->pPrev = nullptr;
 	pNew->data = data;
 	m_pHead = pNew;
+	m_nCount += 1;
 
 	if(!m_pTail)	//链表为空的情况
 		m_pTail = pNew;
@@ -97,6 +109,7 @@ void CMyList::AddTail(DATA data)
 	pNew->pPrev = m_pTail;
 	pNew->data  = data;
 
+	m_nCount += 1;
 	m_pTail = pNew;
 	if(!m_pHead)	//列表为空的情况
 		m_pHead = pNew;
@@ -121,7 +134,7 @@ POSITION CMyList::InsertAfter(POSITION pos,DATA data)
 		p->pPrev = pNew;
 	else
 		m_pTail = pNew;
-
+	m_nCount += 1;
 	return pNew;
 
 
@@ -147,6 +160,7 @@ POSITION CMyList::InsertBefore(POSITION pos,DATA data)
 		p->pNext = pNew;
 	else
 		m_pHead = pNew;
+	m_nCount += 1;
 	return pNew;
 }
 
@@ -158,6 +172,7 @@ void CMyList::RemoveAt(POSITION pos)
 		p = p->pNext;
 	p->pPrev->pNext = p->pNext;
 	p->pNext->pPrev = p->pPrev;
+	m_nCount -= 1;
 	delete p;
 }
 
@@ -166,6 +181,7 @@ void CMyList::RemoveHead(void)
 {
 	POSITION p = m_pHead;
 	m_pHead = p->pNext;
+	m_nCount -= 1;
 	delete p;
 }
 
@@ -173,6 +189,7 @@ void CMyList::RemoveTail(void)
 {
 	POSITION p = m_pTail;
 	m_pTail = p->pPrev;
+	m_nCount -= 1;
 	delete p;
 }
 
@@ -186,6 +203,7 @@ void CMyList::RemoveAll(void)
 		delete q;
 		p = p->pNext;
 	}
+	m_nCount = 0;
 	return;
 }
 
@@ -205,30 +223,44 @@ POSITION CMyList::Find(DATA data, POSITION StartAfter = nullptr)
 		p = m_pHead;
 	else
 		p = StartAfter;
+	while((p->data != data)&& p )
+		p = p->pNext;
+	if(!p)
+		return nullptr;
+	else 
+		return p;
+}
+//位置
 
-	while(p->data != data)
+DATA& CMyList::GetAt(POSITION pos)
+{
+	POSITION p = m_pHead;
+	while(p)
 	{
-
+		if(p == pos)
+			break;
+		p = p->pNext;
 	}
-
-
-	return POSITION();
+	return p->data ;
+}
+POSITION CMyList::GetHeadPosition()
+{
+	return m_pHead;
+}
+DATA& CMyList::GetNext(POSITION pos)
+{
+	return DATA();
 }
 
 
+/*
 int& CMyList::FindIndex(DATA data, POSITION StratAfter)
 {
 	int i = 0;
 	int *p = &i;
 	return i;
 }
-/*//位置
 
-template <typename DATA>
-DATA& CMyList<DATA>::GetAt(POSITION pos)
-{
-	return DATA();
-}
 template <typename DATA>
 const DATA& CMyList<DATA>::GetAt(POSITION pos) const
 {
