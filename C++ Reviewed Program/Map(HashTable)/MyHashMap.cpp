@@ -13,7 +13,6 @@ MyHashMap::MyHashMap(int nHashSize)
 MyHashMap::~MyHashMap(void)
 {
 	RemoveAll();
-	m_nCount = 0;
 }
 
 
