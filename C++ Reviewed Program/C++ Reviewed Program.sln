@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_1.7", "Stud
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_1.8", "StudInfoManaSys_1.8\StudInfoManaSys_1.8.vcxproj", "{D6F77A13-76C0-437E-AC61-C416A7227B81}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_1.9", "StudInfoManaSys_1.9\StudInfoManaSys_1.9.vcxproj", "{EAA735A1-C3D3-422B-BBE5-4C4D08A9AE7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -73,6 +75,10 @@ Global
 		{D6F77A13-76C0-437E-AC61-C416A7227B81}.Debug|Win32.Build.0 = Debug|Win32
 		{D6F77A13-76C0-437E-AC61-C416A7227B81}.Release|Win32.ActiveCfg = Release|Win32
 		{D6F77A13-76C0-437E-AC61-C416A7227B81}.Release|Win32.Build.0 = Release|Win32
+		{EAA735A1-C3D3-422B-BBE5-4C4D08A9AE7D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EAA735A1-C3D3-422B-BBE5-4C4D08A9AE7D}.Debug|Win32.Build.0 = Debug|Win32
+		{EAA735A1-C3D3-422B-BBE5-4C4D08A9AE7D}.Release|Win32.ActiveCfg = Release|Win32
+		{EAA735A1-C3D3-422B-BBE5-4C4D08A9AE7D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
