@@ -9,14 +9,18 @@ struct DATA
 	float fMath;
 
 };
+//typedef int (*funcp)(const POSITION p1,const POSITION p2);
+//int (*funcp)(const DATA d1,const DATA d2);
 
+typedef int (*funcp)(const DATA d1,const DATA d2);	//指针类型重命名为funcp
 class CStudent
 {
+
 	CList<DATA> m_list;	
 public:
 	CStudent(void);
 	~CStudent(void);
-	int Menu();
+
 	void Welcome();
 	int Find();
 	void FindbyMath();
@@ -25,10 +29,28 @@ public:
 	void Modify();
 	void Delete();
 	void Input();
-	void Browse();
+
+
+	static int byNumb(const DATA d1,const DATA d2)
+	{
+		return  d1.nNumb < d2.nNumb;
+	}
+	static int byName(const DATA d1,const DATA d2)
+	{
+		return  (strcmp(d1.sName, d2.sName)<0);
+	}
+	static int byMath(const DATA d1,const DATA d2)
+	{
+		return  d1.fMath< d2.fMath;
+	}
+	void Sort(funcp fp);
+	int Browse();
+
 	bool IsExist(int n);
 	void Print();
 	void Load();
 	void Save();
+
+
 };
 

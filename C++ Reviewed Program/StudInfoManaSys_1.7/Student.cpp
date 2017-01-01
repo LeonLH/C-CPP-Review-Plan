@@ -18,52 +18,6 @@ CStudent::~CStudent(void)
 	m_list.RemoveAll();
 }
 
-int CStudent::Menu()
-{
-	system("cls");
-	puts("\n\n");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t*******                                *******");
-	puts("\t\t*******         1.浏览学生信息         *******");
-	puts("\t\t*******         2.添加学生信息         *******");
-	puts("\t\t*******         3.删除学生信息         *******");
-	puts("\t\t*******         4.修改学生信息         *******");
-	puts("\t\t*******         5.查找学生信息         *******");
-	puts("\t\t*******         0.退出                 *******");
-	puts("\t\t*******                                *******");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	int i;
-	scanf_s("%d",&i);
-	switch(i)
-		{
-			case 1:
-				Browse();
-				break;
-			case 2:
-				Input();
-				break;
-			case 3:
-				Delete();
-				break;
-			case 4:
-				Modify();
-				break;
-			case 5:
-				while(Find())
-					;
-				break;
-			case 0:
-				break;
-	}
-	return i;
-
-}
 void CStudent::Print()
 {
 	POSITION pos = m_list.GetHeadPosition();
@@ -92,13 +46,79 @@ bool CStudent::IsExist(int n)
 
 }
 
+//函数指针,表内排序
+void CStudent::Sort(funcp fp)
+{
+	DATA data;
+	POSITION posi = m_list.GetHeadPosition();
+	POSITION posj = m_list.GetHeadPosition();
+	POSITION posmin = 0;
+	
+	while (posi)
+	{
+		posj = posi;
+		posmin = posi;
+		m_list.GetNext(posj);
+		while (posj)
+		{
+			if((*fp)(m_list.GetAt(posj),m_list.GetAt(posmin)))
+				posmin = posj;	
+			m_list.GetNext(posj);
+		}
+		if(posmin == posi)
+		{
+			m_list.GetNext(posi);
+			continue;
+		}
+		data = m_list.GetAt(posi);
+		m_list.SetAt(posi,m_list.GetAt(posmin));
+		m_list.SetAt(posmin,data);
+		
+		m_list.GetNext(posi);
 
-void CStudent::Browse()
-{//功能：按学号、姓名、成绩排序
-	cout << endl;
+	}
 	Print();
 	system("pause");
+	return ;
 }
+
+
+int CStudent::Browse()
+{//功能：按学号、姓名、成绩排序
+
+	system("cls");
+	puts("\n\n");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	puts("\t\t*******                                *******");
+	puts("\t\t*******     1.根据学号排序             *******");
+	puts("\t\t*******     2.根据成绩排序             *******");
+	puts("\t\t*******     3.根据姓名排序             *******");
+	puts("\t\t*******     0.退出                     *******");
+	puts("\t\t*******                                *******");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	int i;
+	scanf_s("%d",&i);
+	switch(i)
+	{
+		case 1:
+			Sort(byNumb);
+			break;
+		case 2:
+			Sort(byMath);
+			break;
+		case 3:
+			Sort(byName);
+			break;
+		case 0:
+			break;
+	}
+	return i;
+}
+
 void CStudent::Input()
 {//功能：1.检查是否已存在，若存在则提示后返回重新添加，否则继续；2.添加成功后打印所有数据；3.添加之后询问是否继续添加；4.在每次添加时可以选择退出添加函数；
 	char c = 0;

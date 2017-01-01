@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D9A868EB-88B6-4313-A99E-933CF228661A}</ProjectGuid>
+    <ProjectGuid>{B8FE1E1F-897A-480A-95D1-DAAEE0B6EFAC}</ProjectGuid>
     <RootNamespace>StudInfoManaSys_15</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

@@ -28,7 +28,7 @@ public:
 	void Add(void);
 	void Delete(void);
 	void Modify();
-	int Find();
+	int Find( );
 	void Print(void);
 	void Browse();
 	
@@ -39,10 +39,6 @@ public:
 	void FindbyPrio();
 	void FindbyName();
 	void FindbyNumb();
-
-
-
-	
 
 };
 
