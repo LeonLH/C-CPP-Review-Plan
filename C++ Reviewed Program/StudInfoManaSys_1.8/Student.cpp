@@ -18,52 +18,6 @@ CStudent::~CStudent(void)
 	m_list.RemoveAll();
 }
 
-int CStudent::Menu()
-{
-	system("cls");
-	puts("\n\n");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t*******                                *******");
-	puts("\t\t*******         1.浏览学生信息         *******");
-	puts("\t\t*******         2.添加学生信息         *******");
-	puts("\t\t*******         3.删除学生信息         *******");
-	puts("\t\t*******         4.修改学生信息         *******");
-	puts("\t\t*******         5.查找学生信息         *******");
-	puts("\t\t*******         0.退出                 *******");
-	puts("\t\t*******                                *******");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	puts("\t\t**********************************************");
-	int i;
-	scanf_s("%d",&i);
-	switch(i)
-		{
-			case 1:
-				Browse();
-				break;
-			case 2:
-				Input();
-				break;
-			case 3:
-				Delete();
-				break;
-			case 4:
-				Modify();
-				break;
-			case 5:
-				while(Find())
-					;
-				break;
-			case 0:
-				break;
-	}
-	return i;
-
-}
 void CStudent::Print()
 {
 	POSITION pos = m_list.GetHeadPosition();
@@ -91,14 +45,106 @@ bool CStudent::IsExist(int n)
 	return false;
 
 }
-
-
-void CStudent::Browse()
-{//功能：按学号、姓名、成绩排序
-	cout << endl;
-	Print();
-	system("pause");
+POSITION* CStudent::MallocArray()
+{
+	POSITION *p = new POSITION [m_list.GetCount()+1];
+	p[m_list.GetCount()] = nullptr;
+	POSITION pos = m_list.GetHeadPosition();
+	int i = 0;
+	while (pos)
+	{
+		p[i] = pos;
+		++i;
+		m_list.GetNext(pos);
+	}
+	return p;
 }
+void CStudent::FreeArray(POSITION *p)
+{
+	delete []p;
+}
+
+void CStudent::Print(POSITION *p)
+{
+	int i = 0;
+	DATA stud;
+	while(p[i])
+	{
+		stud = m_list.GetAt(p[i]);
+		cout << "\tNUMB: " << stud.nNumb << "\tNAME: "<< stud.sName << "\tMATH: " << stud.fMath << endl;
+		++i;
+	}
+
+
+}
+
+//函数指针,表外排序
+void CStudent::Sort(funcp fp)
+{
+	POSITION * p = MallocArray();
+	int i = 0,j = 0,min = 0;
+	POSITION tmp = 0;
+	p[i] = m_list.GetHeadPosition();
+	p[j] = m_list.GetHeadPosition();
+	
+	while (p[i])
+	{
+		min = i;
+		j = i+1;
+		while (p[j])
+		{
+			if((*fp)(m_list.GetAt(p[j]),m_list.GetAt(p[min])))
+				min = j;	
+			j += 1;
+		}
+		tmp = p[i];
+		p[i] = p[min];
+		p[min] = tmp;
+		++i;
+	}
+	Print(p);
+	system("pause");
+	FreeArray(p);
+	return ;
+}
+
+
+int CStudent::Browse()
+{//功能：按学号、姓名、成绩排序
+
+	system("cls");
+	puts("\n\n");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	puts("\t\t*******                                *******");
+	puts("\t\t*******     1.根据学号排序             *******");
+	puts("\t\t*******     2.根据成绩排序             *******");
+	puts("\t\t*******     3.根据姓名排序             *******");
+	puts("\t\t*******     0.退出                     *******");
+	puts("\t\t*******                                *******");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	puts("\t\t**********************************************");
+	int i;
+	scanf_s("%d",&i);
+	switch(i)
+	{
+		case 1:
+			Sort(byNumb);
+			break;
+		case 2:
+			Sort(byMath);
+			break;
+		case 3:
+			Sort(byName);
+			break;
+		case 0:
+			break;
+	}
+	return i;
+}
+
 void CStudent::Input()
 {//功能：1.检查是否已存在，若存在则提示后返回重新添加，否则继续；2.添加成功后打印所有数据；3.添加之后询问是否继续添加；4.在每次添加时可以选择退出添加函数；
 	char c = 0;

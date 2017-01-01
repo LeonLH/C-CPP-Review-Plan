@@ -61,7 +61,8 @@ int Main::Menu()
 	switch(i)
 		{
 			case 1:
-				m_stu.Browse();
+				while(m_stu.Browse())
+					;
 				break;
 			case 2:
 				m_stu.Input();

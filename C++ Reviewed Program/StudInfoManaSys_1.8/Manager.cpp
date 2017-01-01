@@ -149,41 +149,6 @@ void CManager::Save(void)
 
 }
 
-/*
-void CStudent::Load()
-{
-
-	FILE *fp ;
-	errno_t err = fopen_s(&fp,"./stud.czy","r");
-	if(err)
-		return;
-	DATA Data;
-	while(fread(&Data,1,sizeof(DATA),fp))
-		g_list.AddTail(Data);
-	fclose(fp);
-
-}
-
-void CStudent::Save()
-{
-
-	FILE *fp ;
-	errno_t err = fopen_s(&fp,"./stud.czy","w");
-	if(err)
-		return;
-	POSITION pos = g_list.GetHeadPosition();
-	while(pos)
-	{
-
-		DATA data = g_list.GetNext(pos);
-		fwrite(&data,1,sizeof(DATA),fp);
-
-	}
-	fclose(fp);
-	g_list.RemoveAll();
-}	
-
-*/
 
 bool CManager::ChangePassWord(void)
 {
@@ -368,69 +333,65 @@ void CManager::Modify()
 	return;
 
 }
-/*
-void CManager::Find(FUN_TYPE pfunc)
+void CManager::FindbyPrio()
 {
+	cout << "Please Input the Rights to be Seeked[0 for Senior,1 for Common]:"<<endl;
+	int n;
+	cin >> n;
+	int i = 0,j=0;
+	cout <<'\t' << "NUMB" <<'\t'<< "NAME" <<'\t'<< "RITHTS" <<endl;
+	while (i<m_arr.GetCount())
+	{
+		if(n == m_arr[i].nPrio)
+			cout <<'\t' << m_arr[i].nNumb <<'\t'<< m_arr[i].sName <<'\t'<< (m_arr[i].nPrio?"Common":"Senior") <<endl,++j;
+		++i;
+	}
+	if(!j)
+		cout << "Not Found!"<<endl;
+	system("pause");
 	
-	int i = 0;
-	(*pfunc)(i);
-
 
 }
-void CManager::byName(int i)
+void CManager::FindbyName()
 {
-	//cout << "Please Input the Name to be Seeked:"<<endl;
-	//char pName[20];
-	//cin.clear();cin.sync();
-	//cin.getline(pName,20);
-	//int i = 0,j=0;
-	//cout <<'\t' << "NUMB" <<'\t'<< "NAME" <<'\t'<< "RITHTS" <<endl;
-	//while (i<m_arr.GetCount())
-	//{
-	//	if(!strcmp(pName,m_arr[i].sName))
-	//		cout <<'\t' << m_arr[i].nNumb <<'\t'<< m_arr[i].sName <<'\t'<< (m_arr[i].nPrio?"Common":"Senior") <<endl,++j;
-	//	++i;
-	//}
-	//if(!j)
-	//	cout << "Not Found!"<<endl;
-	//system("pause");
+	cout << "Please Input the Name to be Seeked:"<<endl;
+	char pName[20];
+	cin.clear();cin.sync();
+	cin.getline(pName,20);
+	int i = 0,j=0;
+	cout <<'\t' << "NUMB" <<'\t'<< "NAME" <<'\t'<< "RITHTS" <<endl;
+	while (i<m_arr.GetCount())
+	{
+		if(!strcmp(pName,m_arr[i].sName))
+			cout <<'\t' << m_arr[i].nNumb <<'\t'<< m_arr[i].sName <<'\t'<< (m_arr[i].nPrio?"Common":"Senior") <<endl,++j;
+		++i;
+	}
+	if(!j)
+		cout << "Not Found!"<<endl;
+	system("pause");
+
 }
-void CManager::byNumb(int i)
+void CManager::FindbyNumb()
 {
-	//cout << "Please Input the Numb to be Seeked:"<<endl;
-	//int nNumb;
-	//cin >> nNumb;
-	//int i = 0,j=0;
-	//cout <<'\t' << "NUMB" <<'\t'<< "NAME" <<'\t'<< "RITHTS" <<endl;
-	//while (i<m_arr.GetCount())
-	//{
-	//	if(nNumb == m_arr[i].nNumb)
-	//		cout <<'\t' << m_arr[i].nNumb <<'\t'<< m_arr[i].sName <<'\t'<< (m_arr[i].nPrio?"Common":"Senior") <<endl,++j;
-	//	++i;
-	//}
-	//if(!j)
-	//	cout << "Not Found!"<<endl;
-	//system("pause");
-}
-void CManager::byPrio(int i)
-{
-	//cout << "Please Input the Rights to be Seeked[0 for Senior,1 for Common]:"<<endl;
-	//int n;
-	//cin >> n;
-	//int i = 0,j=0;
-	//cout <<'\t' << "NUMB" <<'\t'<< "NAME" <<'\t'<< "RITHTS" <<endl;
-	//while (i<m_arr.GetCount())
-	//{
-	//	if(n == m_arr[i].nPrio)
-	//		cout <<'\t' << m_arr[i].nNumb <<'\t'<< m_arr[i].sName <<'\t'<< (m_arr[i].nPrio?"Common":"Senior") <<endl,++j;
-	//	++i;
-	//}
-	//if(!j)
-	//	cout << "Not Found!"<<endl;
-	//system("pause");
+	cout << "Please Input the Numb to be Seeked:"<<endl;
+	int nNumb;
+	cin >> nNumb;
+	int i = 0,j=0;
+	cout <<'\t' << "NUMB" <<'\t'<< "NAME" <<'\t'<< "RITHTS" <<endl;
+	while (i<m_arr.GetCount())
+	{
+		if(nNumb == m_arr[i].nNumb)
+			cout <<'\t' << m_arr[i].nNumb <<'\t'<< m_arr[i].sName <<'\t'<< (m_arr[i].nPrio?"Common":"Senior") <<endl,++j;
+		++i;
+	}
+	if(!j)
+		cout << "Not Found!"<<endl;
+	system("pause");
+
 }
 
-int CManager::Find()
+
+int CManager::Find( )
 {
 	system("cls");
 	puts("\n\n");
@@ -450,25 +411,27 @@ int CManager::Find()
 	puts("\t\t**********************************************");
 	int i;
 	scanf_s("%d",&i);
+
+
 	switch(i)
 		{
 			case 1:
-				Find(byPrio);
+				FindbyPrio();
 				break;
 			case 2:
-				Find(byName);
+				FindbyName();
 				break;
 			case 3:
-				Find(byNumb);
+				FindbyNumb();
 				break;
 			case 0:
 				break;
 	}
 	return i;
 }
-*/
 
 
+/*以普通方法实现FindbyPrio(),FindbyName(),FindbyNumb()
 void CManager::FindbyPrio()
 {
 	cout << "Please Input the Rights to be Seeked[0 for Senior,1 for Common]:"<<endl;
@@ -564,4 +527,5 @@ int CManager::Find( )
 	return i;
 }
 
-/**/
+
+*/
