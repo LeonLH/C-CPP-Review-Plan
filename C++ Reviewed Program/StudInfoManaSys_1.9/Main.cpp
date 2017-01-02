@@ -61,20 +61,22 @@ int Main::Menu()
 	switch(i)
 		{
 			case 1:
-//				while(m_stu.Browse())
+//				m_stu.Print();
+//				system("pause");
+				while(m_stu.Browse())
 					;
 				break;
 			case 2:
 				m_stu.Input();
 				break;
 			case 3:
-//				m_stu.Delete();
+				m_stu.Delete();
 				break;
 			case 4:
-//				m_stu.Modify();
+				m_stu.Modify();
 				break;
 			case 5:
-//				while(m_stu.Find())
+				while(m_stu.Find())
 					;
 				break;
 			case 6:

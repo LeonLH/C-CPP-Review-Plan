@@ -69,6 +69,7 @@
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="ReadMe.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentFind.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h" />
