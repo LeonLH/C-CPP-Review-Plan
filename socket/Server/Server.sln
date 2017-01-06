@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server_API_UDP", "Server_API_UDP\Server_API_UDP.vcxproj", "{61DD4362-C8F2-4C69-926A-59B95E86719A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server_API_TCP", "Server_API_TCP\Server_API_TCP.vcxproj", "{8AB82A49-0586-462B-A681-0ABB41CBD134}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server_CAsyncSocket_UDP", "Server_CAsyncSocket_UDP\Server_CAsyncSocket_UDP.vcxproj", "{8F59E533-29AE-4130-91DC-CC5281470592}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server_CSocket_TCP", "Server_CSocket_TCP\Server_CSocket_TCP.vcxproj", "{7FA97259-EEB0-44A1-8B33-5ECEBCC885BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server_CSocket_UDP", "Server_CSocket_UDP\Server_CSocket_UDP.vcxproj", "{F4D5F657-F147-4BED-8C3D-CB83D062FB0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61DD4362-C8F2-4C69-926A-59B95E86719A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{61DD4362-C8F2-4C69-926A-59B95E86719A}.Debug|Win32.Build.0 = Debug|Win32
+		{61DD4362-C8F2-4C69-926A-59B95E86719A}.Release|Win32.ActiveCfg = Release|Win32
+		{61DD4362-C8F2-4C69-926A-59B95E86719A}.Release|Win32.Build.0 = Release|Win32
+		{8AB82A49-0586-462B-A681-0ABB41CBD134}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8AB82A49-0586-462B-A681-0ABB41CBD134}.Debug|Win32.Build.0 = Debug|Win32
+		{8AB82A49-0586-462B-A681-0ABB41CBD134}.Release|Win32.ActiveCfg = Release|Win32
+		{8AB82A49-0586-462B-A681-0ABB41CBD134}.Release|Win32.Build.0 = Release|Win32
+		{8F59E533-29AE-4130-91DC-CC5281470592}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8F59E533-29AE-4130-91DC-CC5281470592}.Debug|Win32.Build.0 = Debug|Win32
+		{8F59E533-29AE-4130-91DC-CC5281470592}.Release|Win32.ActiveCfg = Release|Win32
+		{8F59E533-29AE-4130-91DC-CC5281470592}.Release|Win32.Build.0 = Release|Win32
+		{7FA97259-EEB0-44A1-8B33-5ECEBCC885BE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7FA97259-EEB0-44A1-8B33-5ECEBCC885BE}.Debug|Win32.Build.0 = Debug|Win32
+		{7FA97259-EEB0-44A1-8B33-5ECEBCC885BE}.Release|Win32.ActiveCfg = Release|Win32
+		{7FA97259-EEB0-44A1-8B33-5ECEBCC885BE}.Release|Win32.Build.0 = Release|Win32
+		{F4D5F657-F147-4BED-8C3D-CB83D062FB0A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F4D5F657-F147-4BED-8C3D-CB83D062FB0A}.Debug|Win32.Build.0 = Debug|Win32
+		{F4D5F657-F147-4BED-8C3D-CB83D062FB0A}.Release|Win32.ActiveCfg = Release|Win32
+		{F4D5F657-F147-4BED-8C3D-CB83D062FB0A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
