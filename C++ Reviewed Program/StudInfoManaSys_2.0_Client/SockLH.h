@@ -36,6 +36,7 @@ public:
 		closesocket(m_hSocket);
 		m_hSocket =	INVALID_SOCKET;
 	}
+
 };
 
 /*
@@ -60,3 +61,8 @@ public:
 	void Close(void);
 };
 */
+
+//要点1：在编写Accept的时候要注意的问题：
+//错误的想法：在创建的时候用一个SOCKET句柄，在Accept的时候生成一个新的SOCKET句柄，用于收发数据
+//正确的思路：在创建和侦听的时候用一个SOCKET句柄，一旦Accept之后原来的SOCKET句柄被赋值成为新的句柄用于收发数据；
+//

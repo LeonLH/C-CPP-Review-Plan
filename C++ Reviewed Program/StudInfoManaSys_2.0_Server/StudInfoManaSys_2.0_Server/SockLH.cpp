@@ -1,8 +1,7 @@
 #include "SockLH.h"
 #include<WinSock2.h>
 #pragma comment(lib,"ws2_32.lib")
-#pragma warning(disable:4996)
-
+#pragma  warning (disable:4996)
 CSockLH::CSockLH(void)
 {
 	WSADATA wd;
@@ -83,7 +82,10 @@ BOOL CSockLH::GetPeerName(char* rSocketAddress, UINT& rSocketPort)
 	sockaddr_in sa = {AF_INET};
 	int nLen = sizeof(sa);
 	if(getpeername(m_hSocket,(sockaddr*)&sa,&nLen)<0)
-		return false;
+		{
+			int n =  WSAGetLastError();
+			return false;
+		}
 	strcpy(rSocketAddress,inet_ntoa(sa.sin_addr));	//深拷贝
 	/*rSocketAddress = inet_ntoa(sa.sin_addr);//注意此处不能用浅拷贝	*/
 	rSocketPort = htons(sa.sin_port);
