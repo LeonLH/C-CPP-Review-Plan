@@ -1,6 +1,7 @@
 #include "SockLH.h"
 #include<WinSock2.h>
 #pragma comment(lib,"ws2_32.lib")
+#pragma warning(disable:4996)
 
 CSockLH::CSockLH(void)
 {
@@ -35,7 +36,6 @@ BOOL CSockLH::Accept(CSockLH& rConnectedSocket, LPSTR szIP, UINT* nPort)
 	sockaddr_in sa = {AF_INET};
 	int nLen = sizeof(sa);
 	rConnectedSocket.m_hSocket = accept(m_hSocket,(sockaddr*)&sa,&nLen);
-	m_socka = rConnectedSocket.m_hSocket;
 	if(rConnectedSocket.m_hSocket == INVALID_SOCKET)
 		return false;
 	if(szIP)
@@ -66,7 +66,7 @@ int CSockLH::ReceiveFrom(void* lpBuf, int nBufLen, char* rSocketAddress, UINT& r
 {//
 	sockaddr_in sa = {AF_INET};
 	int nLen = sizeof(sa);
-	int nRet =  recvfrom(m_socka,(char*)lpBuf,nBufLen,0,(sockaddr*)&sa,&nLen);
+	int nRet =  recvfrom(m_hSocket,(char*)lpBuf,nBufLen,0,(sockaddr*)&sa,&nLen);
 	if(nRet > 0)
 	{
 		rSocketPort = htons(sa.sin_port);
@@ -82,7 +82,7 @@ BOOL CSockLH::GetPeerName(char* rSocketAddress, UINT& rSocketPort)
 {
 	sockaddr_in sa = {AF_INET};
 	int nLen = sizeof(sa);
-	if(getpeername(m_socka,(sockaddr*)&sa,&nLen)<0)
+	if(getpeername(m_hSocket,(sockaddr*)&sa,&nLen)<0)
 		return false;
 	strcpy(rSocketAddress,inet_ntoa(sa.sin_addr));	//深拷贝
 	/*rSocketAddress = inet_ntoa(sa.sin_addr);//注意此处不能用浅拷贝	*/

@@ -4,7 +4,7 @@
 
 using namespace std;
 enum{
-	PORT = 12345,
+	PORT = 22345,
 	
 };
 void main()

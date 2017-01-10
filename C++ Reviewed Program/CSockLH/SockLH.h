@@ -36,9 +36,6 @@ public:
 		closesocket(m_hSocket);
 		m_hSocket =	INVALID_SOCKET;
 	}
-
-private:
-	SOCKET m_socka;
 };
 
 /*

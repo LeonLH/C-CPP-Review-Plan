@@ -27,7 +27,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_1.9", "Stud
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSockLH", "CSockLH\CSockLH.vcxproj", "{0D7BE725-29F0-4B34-9F5E-5257C3C11ADF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_2.0", "StudInfoManaSys_2.0\StudInfoManaSys_2.0.vcxproj", "{79185676-8318-42DB-9222-09304140D7E3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StudInfoManaSys_2.0_Client", "StudInfoManaSys_2.0_Client\StudInfoManaSys_2.0_Client.vcxproj", "{79185676-8318-42DB-9222-09304140D7E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
